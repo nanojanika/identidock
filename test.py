@@ -5,8 +5,7 @@ class TestCase(unittest.TestCase):
      identidock.app.config["TESTING"] = True
      self.app = identidock.app.test_client()
   def test_get_mainpage(self):
-     print "Hello World!"
-     print "Hello Again"
+     print ("Hello World!")
      page = self.app.post("/", data=dict(name="Moby Dock"))
      assert page.status_code == 200
      assert 'Hello' in str(page.data)
